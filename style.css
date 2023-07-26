@@ -473,7 +473,7 @@ main .sobre {
 
     header .navegacao-primaria li{
         margin-left: 0;
-        opacity: 0;
+        /*opacity: 0;*/
 
     }
 
