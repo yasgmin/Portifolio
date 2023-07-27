@@ -57,3 +57,63 @@ const mobileNavbar = new MobileNavbar(
     ".navegacao-primaria li a",
 );
 mobileNavbar.init();
+
+function showLista(lista, botao = "all"){
+    lista.forEach((item) => {
+        item.classList.remove('ativo');
+    });
+
+    if (botao === 'design'){
+        lista.forEach((item) => {
+            if (item.id === 'design') {
+                item.classList.add('ativo');
+            }
+        });
+    } else if (botao === 'graphic'){
+        lista.forEach((item) => {
+            if (item.id === 'graphic') {
+                item.classList.add('ativo');
+            }
+        });
+    } else if (botao === 'website'){
+        lista.forEach((item) => {
+            if (item.id === 'website') {
+                item.classList.add('ativo');
+            }
+        });
+    } else if (botao === 'all'){
+        lista.forEach((item) => {
+            item.classList.add('ativo');
+        });
+    }
+}
+
+const listaALL = document.querySelectorAll('.projects_armazenamento ul li');
+const buttonGeral = document.querySelectorAll('.projects_models ul li');
+
+listaALL.forEach((item) => {
+    item.classList.add('ativo');
+});
+
+function removeClick(index){
+    buttonGeral.forEach((item) => {
+        item.classList.remove('ativo');
+    });
+    buttonGeral[index].classList.add('ativo');
+}
+
+buttonGeral.forEach((event, index) => {
+    event.addEventListener('click', () => {
+        removeClick(index);
+        let currentButton = event;
+        if (currentButton.classList.contains('all')){
+            showLista(listaALL, "all");
+        } else if (currentButton.classList.contains('design')){
+            showLista(listaALL, "design");
+        } else if (currentButton.classList.contains('graphic')){
+            showLista(listaALL, "graphic");
+        } else if (currentButton.classList.contains('website')){
+            showLista(listaALL, "website");
+        }
+    });
+});

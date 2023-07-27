@@ -458,13 +458,15 @@ main .sobre {
     }
 
     header .navegacao-primaria {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
         position: absolute;
         top: 8vh;
         right: 0;
-        width: 50vw;
-        height: 92vh;
+        width: 40vw;
+        height: 80vh;
         background-color: #0f0816;
-        align-items: center;
         justify-content: space-around;
         transform: translate(100%);
         transition: transform 0.3s ease-in;
@@ -472,8 +474,9 @@ main .sobre {
     }
 
     header .navegacao-primaria li{
-        margin-left: 0;
-        opacity: 0;
+
+        margin-left: 0;        
+        /* opacity: 0; */
 
     }
 
@@ -573,4 +576,95 @@ main .sobre {
 
 }
 
+::-webkit-scrollbar{
+    width: 10px;
+}
 
+::-webkit-scrollbar-track{
+    background-color: #131313;
+
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #18ec18;
+    border-radius: 10px;
+}
+
+.projects{
+    padding: 30px;
+    display: grid;
+    justify-content: center;
+    gap: 30px;
+    background-image: linear-gradient(#07020D, #0D0517);
+}
+
+.projects ul{
+    display: flex;
+    justify-content: center;
+    gap:30px;
+}
+
+.projects_models ul li{
+    cursor: pointer;
+    font-family: "Poppins";
+    background-color: #0D0517;
+    border: 1px solid #150a1f;
+    padding: 6px 20px;
+    color: #f7f7f7
+}
+.projects_models ul li.ativo{
+    background-color: #01ff0b;
+    color: #0D0517;
+    font-weight: bold;
+
+}
+
+.projects_armazenamento ul {
+    display: grid;
+    margin-top: 60px;
+    gap: 20px;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.projects_armazenamento ul li{
+    display: none;
+    max-width: 100%;
+    height: 100%;
+}
+
+.projects_armazenamento ul li.ativo{
+    display: block;
+    animation: animationImagemButton 2s ease-in-out forwards;
+}
+
+.projects_armazenamento ul li img {
+    max-width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.projects a {
+    background-color: #0D0517;
+    text-decoration: none;
+    justify-self: center;
+    padding: 20px 40px;
+    border: 1px solid #150a1f;
+    color: #f7f7f7;
+    font-family: "Poppins";
+    font-weight: 200;
+
+}
+
+@keyframes animationImagemButton {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, -90px, 0);
+
+    }
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+
+    }
+}
