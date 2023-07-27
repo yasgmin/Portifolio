@@ -20,7 +20,7 @@ body {
 
 header {
     position: fixed;
-    top: 8;
+    top: 0;
     left: 0;
     background-color: #040009;
     padding: 10px;
@@ -47,6 +47,7 @@ header .navegacao-primaria{
     flex-wrap: wrap;
     gap: 30px;
     align-items: center;
+    margin-top: 30px;
 
 }
 
